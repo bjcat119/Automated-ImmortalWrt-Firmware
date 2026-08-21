@@ -1,7 +1,6 @@
 luci
 luci-i18n-base-zh-cn
 luci-i18n-firewall-zh-cn
-luci-i18n-opkg-zh-cn
 curl
 wget
 ca-certificates
