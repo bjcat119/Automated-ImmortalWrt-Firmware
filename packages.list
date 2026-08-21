@@ -1,6 +1,49 @@
+# === LUCI 核心 ===
 luci
 luci-i18n-base-zh-cn
 luci-i18n-firewall-zh-cn
+luci-i18n-package-manager-zh-cn
+
+# === 主题 ===
+luci-theme-argon
+
+# === 双分区管理 ===
+luci-app-advanced-reboot
+luci-i18n-advanced-reboot-zh-cn
+
+# === 定时重启 ===
+luci-app-autoreboot
+luci-i18n-autoreboot-zh-cn
+
+# === UPnP ===
+luci-app-upnp
+luci-i18n-upnp-zh-cn
+
+# === 分区扩容 ===
+luci-app-partexp
+luci-i18n-partexp-zh-cn
+
+# === 存储自动挂载（automount 依赖） ===
+automount
+block-mount
+blkid
+lsblk
+
+# === USB 存储驱动（WRT1900AC v2 为 USB 3.0 / xHCI） ===
+kmod-usb3
+kmod-usb-storage
+kmod-usb-storage-uas
+
+# === 文件系统内核模块（插 U 盘即识别/挂载） ===
+kmod-fs-ext4
+kmod-fs-vfat
+kmod-fs-ntfs3
+kmod-fs-exfat
+e2fsprogs
+
+# === 其他 ===
+bash
 curl
 wget
 ca-certificates
+ip-full
