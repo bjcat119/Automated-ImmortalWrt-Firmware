@@ -1,5 +1,9 @@
 # === LUCI 核心 ===
-luci
+luci-light
+luci-compat
+luci-lib-base
+luci-lib-ipkg
+luci-app-package-manager
 luci-i18n-base-zh-cn
 luci-i18n-firewall-zh-cn
 luci-i18n-package-manager-zh-cn
@@ -19,31 +23,35 @@ luci-i18n-autoreboot-zh-cn
 luci-app-upnp
 luci-i18n-upnp-zh-cn
 
-# === 分区扩容 ===
-luci-app-partexp
-luci-i18n-partexp-zh-cn
-
-# === 存储自动挂载（automount 依赖） ===
+# === 存储自动挂载 ===
 automount
 block-mount
-blkid
-lsblk
 
-# === USB 存储驱动（WRT1900AC v2 为 USB 3.0 / xHCI） ===
+# === USB 存储驱动 ===
 kmod-usb3
 kmod-usb-storage
 kmod-usb-storage-uas
 
-# === 文件系统内核模块（插 U 盘即识别/挂载） ===
+# === 文件系统模块 ===
 kmod-fs-ext4
 kmod-fs-vfat
 kmod-fs-ntfs3
 kmod-fs-exfat
 e2fsprogs
 
-# === 其他 ===
+# === 网络增强（替换/增强默认） ===
+dnsmasq-full
+wpad-openssl
+ip-full
+
+# === WiFi 驱动（WRT1900AC v2 无线） ===
+kmod-mwlwifi
+mwlwifi-firmware-88w8864
+
+# === 系统工具 ===
 bash
 curl
 wget
 ca-certificates
-ip-full
+ca-bundle
+autocore
