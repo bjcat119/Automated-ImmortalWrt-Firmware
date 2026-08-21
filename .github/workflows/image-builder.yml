@@ -48,12 +48,19 @@ jobs:
           IB_DIR=$(find /tmp/ib -maxdepth 1 -type d -name 'immortalwrt-imagebuilder-*' | head -n1)
           echo "IB_DIR=$IB_DIR" >> "$GITHUB_ENV"
 
+      - name: Show profiles matching input (sanity check)
+        working-directory: ${{ env.IB_DIR }}
+        run: |
+          echo "::group::profiles.json entries containing 'linksys'"
+          grep -o '"id":[[:space:]]*"linksys[^"]*"' profiles.json 2>/dev/null | sort -u || true
+          echo "::endgroup::"
+          echo "Resolved PROFILE = ${{ env.PROFILE }}"
+
       - name: Prepare packages list
         run: |
           if [ -f "$PACKAGES_LIST_FILE" ]; then
             PACKAGES=$(grep -v '^\s*#' "$PACKAGES_LIST_FILE" | tr '\n' ' ')
           else
-            PACKIES=""
             PACKAGES=""
           fi
           echo "PACKAGES=$PACKAGES" >> "$GITHUB_ENV"
@@ -68,7 +75,7 @@ jobs:
 
       - name: Copy local ipk packages
         run: |
-          if [ -d "$PACKAGES_FOLDER" ] && [ "$(ls -A $PACKAGES_FOLDER 2>/dev/null)" ]; then
+          if [ -d "$PACKAGES_FOLDER" ] && [ "$(ls -A "$PACKAGES_FOLDER" 2>/dev/null)" ]; then
             mkdir -p "$IB_DIR/packages"
             cp -r "$PACKAGES_FOLDER/"* "$IB_DIR/packages/" 2>/dev/null || true
           fi
@@ -81,8 +88,13 @@ jobs:
             PACKAGES="${{ env.PACKAGES }}" \
             FILES="files"
 
+      - name: Prepare artifact
+        run: |
+          mkdir -p "/tmp/artifact/${{ env.PROFILE }}"
+          cp -r ${{ env.IB_DIR }}/bin/targets/mvebu/cortexa9/* "/tmp/artifact/${{ env.PROFILE }}/"
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v7
         with:
-          name: immortalwrt-24.10.6-wrt1900acv2
-          path: ${{ env.IB_DIR }}/bin/targets/mvebu/cortexa9/*
+          name: ${{ env.PROFILE }}
+          path: /tmp/artifact/${{ env.PROFILE }}/
