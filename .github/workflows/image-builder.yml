@@ -6,14 +6,14 @@ on:
       profile:
         description: 'Target PROFILE'
         required: false
-        default: 'linksys_wrt1900acv2'
+        default: 'linksys_wrt1900ac-v2'
       download_url:
         description: 'Image Builder tar.zst URL'
         required: false
         default: 'https://downloads.immortalwrt.org/releases/24.10.6/targets/mvebu/cortexa9/immortalwrt-imagebuilder-24.10.6-mvebu-cortexa9.Linux-x86_64.tar.zst'
 
 env:
-  PROFILE: ${{ github.event.inputs.profile || 'linksys_wrt1900acv2' }}
+  PROFILE: ${{ github.event.inputs.profile || 'linksys_wrt1900ac-v2' }}
   DOWNLOAD_URL: ${{ github.event.inputs.download_url || 'https://downloads.immortalwrt.org/releases/24.10.6/targets/mvebu/cortexa9/immortalwrt-imagebuilder-24.10.6-mvebu-cortexa9.Linux-x86_64.tar.zst' }}
   PACKAGES_LIST_FILE: packages.list
   UCI_CUSTOM_FILE: uci-custom
@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install dependencies
         run: |
@@ -53,6 +53,7 @@ jobs:
           if [ -f "$PACKAGES_LIST_FILE" ]; then
             PACKAGES=$(grep -v '^\s*#' "$PACKAGES_LIST_FILE" | tr '\n' ' ')
           else
+            PACKIES=""
             PACKAGES=""
           fi
           echo "PACKAGES=$PACKAGES" >> "$GITHUB_ENV"
@@ -81,7 +82,7 @@ jobs:
             FILES="files"
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: immortalwrt-24.10.6-wrt1900acv2
           path: ${{ env.IB_DIR }}/bin/targets/mvebu/cortexa9/*
