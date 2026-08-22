@@ -1,6 +1,6 @@
 [🇨🇳 中文版](README.md) | [🇺🇸 English Version](README_EN.md)
 
-# ImmortalWrt 24.10.6 for Linksys WRT1900AC v2
+# 自动构建ImmortalWrt 24.10.6 for Linksys WRT1900AC v2定制固件
 
 [![ImmortalWrt](https://img.shields.io/badge/ImmortalWrt-24.10.6-brightgreen)](https://immortalwrt.org/)
 [![Target](https://img.shields.io/badge/target-mvebu%2Fcortexa9-blue)](https://downloads.immortalwrt.org/releases/24.10.6/targets/mvebu/cortexa9/)
