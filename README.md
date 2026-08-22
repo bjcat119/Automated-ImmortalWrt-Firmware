@@ -1,4 +1,4 @@
-[🇨🇳 中文版](README.md) | [🇺🇸 English Version](README_EN.md)
+[中文版](README.md) | [English Version](README_EN.md)
 
 # 自动构建ImmortalWrt 24.10.6 for Linksys WRT1900AC v2定制固件
 
