@@ -12,6 +12,7 @@ uci commit system
 
 # root 密码（交互式写入，比 chpasswd 在 uci-defaults 里更可靠）
 /usr/bin/passwd root <<'PWD'
+# 将rootpassword修改为你自己的密码
 rootpassword
 rootpassword
 PWD
