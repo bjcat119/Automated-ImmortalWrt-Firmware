@@ -10,10 +10,10 @@ uci set system.@system[0].timezone='CST-8'
 uci set system.@system[0].zonename='Asia/Shanghai'
 uci commit system
 
-# root 密码（交互式写入，比 chpasswd 在 uci-defaults 里更可靠），可将默认密码password修改为你自己的密码
+# root 密码（交互式写入，比 chpasswd 在 uci-defaults 里更可靠），可将默认密码abcd1234修改为你自己的密码
 /usr/bin/passwd root <<'PWD'
-password
-password
+abcd1234
+abcd1234
 PWD
 
 uci set luci.main.lang='zh-cn'
