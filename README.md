@@ -70,13 +70,13 @@
 ## 仓库结构
 ├── .github/workflows/
 
-│   └── image-builder.yml      # Build workflow
+│   └── image-builder.yml      # 构建流程
 
-├── packages.list              # Package list
+├── packages.list              # 软件包清单（本文件）
 
-├── uci-custom                 # First-boot script → /etc/uci-defaults/99-custom
+├── uci-custom                 # 首次启动脚本 → /etc/uci-defaults/99-custom
 
-├── packages/                  # Optional: extra .ipk (must be arm_cortex-a9_neon)
+├── packages/                  # 可选：额外 .ipk（需 arm_cortex-a9_neon 架构）
 
 ├── README.md
 
