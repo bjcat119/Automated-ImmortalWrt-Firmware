@@ -3,6 +3,7 @@
 # 广西联通 PPPoE + DHCPv6-PD/60 + 双频WiFi + FullCone + SFO + SYN-flood + UPnP
 # + 主机名/密码/NTP(阿里+腾讯)/中文/Argon + LAN IP/DNS/DHCP池
 # + WAN 锁 eth1 / keepalive / SSH-SCP 放行 / dropbear 显式配置
+# 用法：放到 /etc/uci-defaults/99-firstboot-gx-unicom，chmod +x，reboot 自执行自删
 
 # ==================== 系统 ====================
 uci set system.@system[0].hostname='WRT1900ACv2'
@@ -10,10 +11,10 @@ uci set system.@system[0].timezone='CST-8'
 uci set system.@system[0].zonename='Asia/Shanghai'
 uci commit system
 
-# root 密码（交互式写入，比 chpasswd 在 uci-defaults 里更可靠），可将默认密码abcd1234修改为你自己的密码
+# root 密码（交互式写入，比 chpasswd 在 uci-defaults 里更可靠）
 /usr/bin/passwd root <<'PWD'
-abcd1234
-abcd1234
+SoftOEM@119
+SoftOEM@119
 PWD
 
 uci set luci.main.lang='zh-cn'
