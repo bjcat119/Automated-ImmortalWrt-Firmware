@@ -1,3 +1,5 @@
+[🇺🇸 English Version](README_EN.md) | [🇨🇳 中文版](README.md)
+
 # ImmortalWrt Image Builder for Linksys WRT1900AC v2
 
 使用 GitHub Actions + ImmortalWrt 24.10.6 Image Builder 为 **Linksys WRT1900AC v2** 自动构建固件。
