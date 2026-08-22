@@ -6,7 +6,7 @@
 [![Target](https://img.shields.io/badge/target-mvebu%2Fcortexa9-blue)](https://downloads.immortalwrt.org/releases/24.10.6/targets/mvebu/cortexa9/)
 [![PROFILE](https://img.shields.io/badge/profile-linksys_wrt1900ac--v2-orange)](https://openwrt.org/toh/linksys/wrt1900ac_v2)
 
-Automated firmware builder for **Linksys WRT1900AC v2** using GitHub Actions + ImmortalWrt Image Builder, based on [noviachen/Image-Builder](https://github.com/noviachen/Image-Builder).
+Automated firmware builder for **Linksys WRT1900AC v2** using GitHub Actions + ImmortalWrt Image Builder.
 
 ---
 
