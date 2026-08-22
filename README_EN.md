@@ -1,3 +1,4 @@
+[🇨🇳 中文版](README.md) | [🇺🇸 English Version](README_EN.md)
 # ImmortalWrt 24.10.6 for Linksys WRT1900AC v2
 
 [![ImmortalWrt](https://img.shields.io/badge/ImmortalWrt-24.10.6-brightgreen)](https://immortalwrt.org/)
