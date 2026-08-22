@@ -1,28 +1,36 @@
-# ImmortalWrt Image Builder
+# ImmortalWrt Image Builder for Linksys WRT1900AC v2
 
-用Github Action定制Linksys WRT1900AC v2的ImmortalWrt 24.10.6固件
+使用 GitHub Actions + ImmortalWrt 24.10.6 Image Builder 为 **Linksys WRT1900AC v2** 自动构建固件。
 
-## Usage
+## 硬件信息
 
-- Click the [Use this template](https://github.com/noviachen/Image-Builder/generate) button to create a new repository.
-- By default, ImmortalWrt 23.05.3 (r27917-81a1f98d5b) is used. To change it, modify the `DOWNLOAD_URL` in `.github/workflows/image-builder.yml`. May also be applicable for compiling the official OpenWrt version (untested).
-- Modify the `PROFILE` in image-builder.yml according to your device.
-- Modify `uci-custom` (first boot script) and `packages.list` (to add or remove packages) as needed.
-- Upload other ipk files to the `packages` folder (if any).
-- Select `ImmortalWrt Image Builder` on the Actions page.
-- Click the `Run workflow` button.
-- When the build is completed, click the file links under `Artifacts` to download the firmwares.
+| 项目 | 详情 |
+|------|------|
+| 设备 | Linksys WRT1900AC v2 |
+| 平台 | mvebu / cortexa9 |
+| SoC | Marvell Armada 385 88F6820 |
+| 无线 | 88W8864 (2.4G + 5G, mwlwifi) |
+| Flash | 128MB |
+| RAM | 256MB DDR3 |
+| PROFILE | `linksys_wrt1900ac-v2` |
 
-## Thanks
+## 固件版本
 
-- [GitHub Actions](https://github.com/features/actions)
-- [OpenWrt](https://github.com/openwrt/openwrt)
-- [Project ImmortalWrt](https://github.com/immortalwrt/immortalwrt)
+- **ImmortalWrt 24.10.6**
+- 架构：`mvebu/cortexa9`
 
-## Reference
+## 预装软件包
 
-[ImmortalWrt Image Builder 使用说明](https://github.com/1715173329/blog/issues/8)
+| 分类 | 包含 |
+|------|------|
+| LuCI 核心 | luci-light, luci-compat, luci-i18n-base-zh-cn, luci-i18n-firewall-zh-cn, luci-i18n-package-manager-zh-cn |
+| 主题 | luci-theme-argon |
+| 双分区管理 | luci-app-advanced-reboot + 中文翻译 |
+| 定时重启 | luci-app-autoreboot + 中文翻译 |
+| UPnP | luci-app-upnp + 中文翻译 |
+| 存储挂载 | automount, block-mount, kmod-usb3, kmod-usb-storage, kmod-usb-storage-uas, kmod-fs-ext4/vfat/ntfs3/exfat, e2fsprogs |
+| 网络增强 | dnsmasq-full, wpad-openssl, ip-full |
+| 无线驱动 | kmod-mwlwifi, mwlwifi-firmware-88w8864 |
+| 系统工具 | autocore, bash, curl, wget, ca-certificates, ca-bundle |
 
-## License
-
-[MIT](https://github.com/noviachen/Image-Builder/blob/main/LICENSE)
+## 仓库结构
