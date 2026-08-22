@@ -161,4 +161,7 @@ uci commit upnpd
 /etc/init.d/dropbear restart 2>/dev/null
 /etc/init.d/uhttpd restart 2>/dev/null
 
+# 自删
+rm -f /etc/uci-defaults/99-custom
+
 exit 0
