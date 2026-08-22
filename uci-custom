@@ -33,7 +33,7 @@ uci delete network.wan6 2>/dev/null
 
 # ==================== 1. WAN PPPoE ====================
 uci set network.wan.proto='pppoe'
-uci set network.wan.device='eth1'
+uci set network.wan.device='wan'
 uci set network.wan.username='77145396804'
 uci del network.wan.password
 uci set network.wan.password='396804'
@@ -86,7 +86,7 @@ uci set wireless.radio0.channel='161'
 uci set wireless.radio0.htmode='VHT80'
 uci set wireless.default_radio0.mode='ap'
 uci set wireless.default_radio0.network='lan'
-uci set wireless.default_radio0.ssid='22B013-5G'
+uci set wireless.default_radio0.ssid='22B1013-5G'
 uci set wireless.default_radio0.encryption='psk2'
 uci set wireless.default_radio0.key='FeiNanBjCat'
 uci set wireless.default_radio0.disabled='0'
