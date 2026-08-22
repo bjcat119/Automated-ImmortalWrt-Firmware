@@ -92,7 +92,7 @@ Click **Use this template → Create a new repository**.
 | File | Purpose |
 |------|---------|
 | `packages.list` | Add/remove packages, one per line; `-pkgname` to remove defaults |
-| `uci-custom` | First-boot script (LAN IP / password / Wi-Fi) |
+| `uci-custom` | First-boot script (LAN IP / root password / PPPoE) |
 | `packages/` | Extra `.ipk` files (must be `arm_cortex-a9_neon`) |
 
 ### 3. Trigger Build
