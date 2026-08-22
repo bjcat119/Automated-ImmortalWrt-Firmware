@@ -148,6 +148,9 @@ uci set upnpd.config.port='5000'
 uci set upnpd.config.secure_mode='1'
 uci set upnpd.config.log_output='1'
 uci set upnpd.config.upnp_lease_file='/var/run/miniupnpd.leases'
+# 按联通 500M下行/50M上行 设置uPnP带宽download=62500 upload=6250；若是 1000M/100M​ 就写 125000 / 12500。
+uci set upnpd.config.download='62500'
+uci set upnpd.config.upload='6250'
 uci commit upnpd
 
 # ==================== 8. 重启服务 ====================
