@@ -1,8 +1,6 @@
-English | [中文](https://noviachen.github.io/posts/fcde2f81.html)
+# ImmortalWrt Image Builder
 
-# Image Builder
-
-Use Github Action for a easier way to compile firmwares with Image Builder.
+用Github Action定制Linksys WRT1900AC v2的ImmortalWrt 24.10.6固件
 
 ## Usage
 
