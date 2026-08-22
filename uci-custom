@@ -13,8 +13,8 @@ uci commit system
 
 # root 密码（交互式写入，比 chpasswd 在 uci-defaults 里更可靠）
 /usr/bin/passwd root <<'PWD'
-passwd
-passwd
+SoftOEM@119
+SoftOEM@119
 PWD
 
 uci set luci.main.lang='zh-cn'
@@ -35,7 +35,7 @@ uci delete network.wan6 2>/dev/null
 # ==================== 1. WAN PPPoE ====================
 uci set network.wan.proto='pppoe'
 uci set network.wan.device='wan'
-uci set network.wan.username='nn77145396804'
+uci set network.wan.username='77145396804'
 uci del network.wan.password
 uci set network.wan.password='396804'
 uci set network.wan.mtu='1492'
