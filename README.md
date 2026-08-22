@@ -81,3 +81,52 @@
 ├── README.md
 
 └── README_EN.md
+---
+
+## 构建步骤
+
+### 1. Fork 本仓库
+右上角 **Use this template → Create a new repository**。
+
+### 2. 自定义（可选）
+| 文件 | 用途 |
+|------|------|
+| `packages.list` | 增删包，一行一个，`-包名` 删除默认包 |
+| `uci-custom` | 首启脚本（改 LAN IP / 设密码 / 开 Wi-Fi） |
+| `packages/` | 放额外 `.ipk`（架构必须是 `arm_cortex-a9_neon`） |
+
+### 3. 触发构建
+- **Actions** → **ImmortalWrt Image Builder** → **Run workflow**
+- `Target PROFILE`：默认 `linksys_wrt1900ac-v2`
+- 等待 3–8 分钟
+
+### 4. 下载固件
+Artifacts 区域下载 `linksys_wrt1900ac-v2/` 目录，内含：
+
+| 文件 | 用途 |
+|------|------|
+| `*-squashfs-sysupgrade.bin` | 从 OpenWrt / ImmortalWrt 升级 |
+| `*-squashfs-factory.img` | 从 Linksys 原厂固件刷入 |
+
+---
+
+## 刷机注意事项
+
+- ⚠️ **PROFILE 名称**：24.10 系列为 `linksys_wrt1900ac-v2`（带横杠），旧名 `linksys_wrt1900acv2` 会构建失败。
+- ⚠️ **双分区保护**：WRT1900AC v2 有双 boot 分区，刷坏可在开机时按住 **电源键 3 秒** 切换分区，或通过 `advanced-reboot` 网页操作。
+- ⚠️ **无线驱动**：mwlwifi 驱动稳定性不如 ath79 平台，5G 部分客户端可能有兼容问题。
+- ⚠️ **NTFS 读写**：使用内核 `ntfs3` 驱动，无需 `ntfs-3g`；极少数老硬盘盒 UAS 不兼容时，需在启动参数加 `usb-storage.quirks`。
+- ⚠️ **首次启动后扩容**：LuCI → 系统 → 分区扩容，一键把 rootfs 扩展到整块 Flash。
+
+---
+
+## 相关链接
+
+- [ImmortalWrt 官网](https://immortalwrt.org/)
+- [24.10.6 mvebu/cortexa9 下载](https://downloads.immortalwrt.org/releases/24.10.6/targets/mvebu/cortexa9/)
+- [OpenWrt 设备页](https://openwrt.org/toh/linksys/wrt1900ac_v2)
+- [原模板 noviachen/Image-Builder](https://github.com/noviachen/Image-Builder)
+
+---
+
+*固件版权归 ImmortalWrt 项目所有。本仓库仅提供构建配置。*
