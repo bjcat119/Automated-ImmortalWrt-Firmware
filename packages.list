@@ -23,6 +23,10 @@ luci-i18n-autoreboot-zh-cn
 luci-app-upnp
 luci-i18n-upnp-zh-cn
 
+# === 分区扩容 ===
+luci-app-partexp
+luci-i18n-partexp-zh-cn
+
 # === 存储自动挂载 ===
 automount
 block-mount
@@ -39,19 +43,19 @@ kmod-fs-ntfs3
 kmod-fs-exfat
 e2fsprogs
 
-# === 网络增强（替换/增强默认） ===
+# === 网络增强（替换默认） ===
 dnsmasq-full
 wpad-openssl
 ip-full
 
-# === WiFi 驱动（WRT1900AC v2 无线） ===
+# === WiFi 驱动（WRT1900AC v2） ===
 kmod-mwlwifi
 mwlwifi-firmware-88w8864
 
 # === 系统工具 ===
+autocore
 bash
 curl
 wget
 ca-certificates
 ca-bundle
-autocore
