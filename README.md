@@ -93,7 +93,7 @@
 | 文件 | 用途 |
 |------|------|
 | `packages.list` | 增删包，一行一个，`-包名` 删除默认包 |
-| `uci-custom` | 首启脚本（改 LAN IP / 设密码 / 开 Wi-Fi） |
+| `uci-custom` | 首启脚本（改 LAN IP / 设root密码 / 设置PPPoE拨号账号密码） |
 | `packages/` | 放额外 `.ipk`（架构必须是 `arm_cortex-a9_neon`） |
 
 ### 3. 触发构建
