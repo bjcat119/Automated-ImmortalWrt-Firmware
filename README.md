@@ -34,3 +34,18 @@
 | 系统工具 | autocore, bash, curl, wget, ca-certificates, ca-bundle |
 
 ## 仓库结构
+.
+
+├── .github/
+
+│   └── workflows/
+
+│       └── image-builder.yml      # GitHub Actions 构建流程
+
+├── packages.list                  # 预装软件包清单（一行一个）
+
+├── uci-custom                     # 首次启动配置脚本（写入 /etc/uci-defaults/99-custom）
+
+├── packages/                      # 可选：存放额外 .ipk 文件（需 mvebu/cortexa9 架构）
+
+└── README.md
