@@ -117,7 +117,7 @@ Artifacts 区域下载 `linksys_wrt1900ac-v2/` 目录，内含：
 - ⚠️ **双分区保护**：WRT1900AC v2 有双 boot 分区，刷坏可在开机时按住 **电源键 3 秒** 切换分区，或通过 `advanced-reboot` 网页操作。
 - ⚠️ **无线驱动**：mwlwifi 驱动稳定性不如 ath79 平台，5G 部分客户端可能有兼容问题。
 - ⚠️ **NTFS 读写**：使用内核 `ntfs3` 驱动，无需 `ntfs-3g`；极少数老硬盘盒 UAS 不兼容时，需在启动参数加 `usb-storage.quirks`。
-- ⚠️ **首次启动后扩容**：LuCI → 系统 → 分区扩容，一键把 rootfs 扩展到整块 Flash。
+- ⚠️ **首次启动后扩容**：LuCI → 系统 → 分区扩容，一键扩容路由器的/overlay空间到外接的USB磁盘上。
 
 ---
 
